@@ -9,4 +9,4 @@ RUN git clone https://github.com/fpaparoni/springboot-crud-demo.git
 WORKDIR springboot-crud-demo/
 RUN mvn clean package -DskipTests
 RUN cp target/spring-crud.war /usr/local/tomcat/webapps/
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+CMD ["sudo", "/usr/local/tomcat/bin/catalina.sh", "run"]
