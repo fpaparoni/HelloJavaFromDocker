@@ -7,5 +7,4 @@ RUN git clone https://github.com/fpaparoni/springboot-crud-demo.git
 WORKDIR springboot-crud-demo/
 RUN mvn clean package -DskipTests
 WORKDIR target/
-RUN cp target/spring-crud.war /usr/local/tomcat/webapps/
 CMD ["java","-jar","spring-crud.jar"]
