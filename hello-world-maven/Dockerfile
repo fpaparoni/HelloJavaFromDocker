@@ -1,8 +1,8 @@
 FROM maven:latest
 EXPOSE 8080
 RUN apt-get install git
-RUN git clone https://github.com/dasanjos/java-WebServer.git
-WORKDIR java-WebServer/
+RUN git clone https://github.com/fpaparoni/ExampleWebserver.git
+WORKDIR ExampleWebserver/
 RUN mvn clean package
 WORKDIR target/
-CMD ["java","-jar","java-WebServer-0.1-jar-with-dependencies.jar"]
+CMD ["java","-jar","example-webserver-1.0-SNAPSHOT.jar"]
