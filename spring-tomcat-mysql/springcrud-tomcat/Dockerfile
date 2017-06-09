@@ -1,15 +1,11 @@
-FROM tomcat:8.5.15
+FROM maven:latest
 MAINTAINER Federico Paparoni
 EXPOSE 8080
 RUN apt-get update
-RUN apt-get -y install sudo
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN apt-get -y install git
-RUN apt-get -y install openjdk-8-jdk
-RUN apt-get -y install maven
 RUN git clone https://github.com/fpaparoni/springboot-crud-demo.git
 WORKDIR springboot-crud-demo/
 RUN mvn clean package -DskipTests
+WORKDIR target/
 RUN cp target/spring-crud.war /usr/local/tomcat/webapps/
-USER docker
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+CMD ["java","-jar","spring-crud.jar"]
