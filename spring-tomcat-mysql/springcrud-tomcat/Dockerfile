@@ -2,6 +2,9 @@ FROM tomcat:8.5.15
 MAINTAINER Federico Paparoni
 EXPOSE 8080
 RUN apt-get update
+RUN apt-get -y install sudo
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+USER docker
 RUN apt-get -y install git
 RUN apt-get -y install openjdk-8-jdk
 RUN apt-get -y install maven
