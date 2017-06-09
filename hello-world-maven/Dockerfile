@@ -1,4 +1,5 @@
 FROM maven:latest
+MAINTAINER Federico Paparoni
 EXPOSE 8080
 RUN apt-get install git
 RUN git clone https://github.com/fpaparoni/ExampleWebserver.git
