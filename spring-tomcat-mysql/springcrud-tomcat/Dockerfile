@@ -1,6 +1,7 @@
 FROM tomcat:8.5.15
 MAINTAINER Federico Paparoni
 EXPOSE 8080
+RUN apt-get update
 RUN apt-get install git
 RUN apt-get install maven
 RUN git clone https://github.com/fpaparoni/springboot-crud-demo.git
