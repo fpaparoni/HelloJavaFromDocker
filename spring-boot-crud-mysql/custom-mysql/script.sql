@@ -2,16 +2,15 @@ CREATE DATABASE  IF NOT EXISTS `springbootdb`;
 USE `springbootdb`;
 
 --
--- Table structure for table `product`
+-- Table structure for table `post`
 --
 
-DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `post`;
 
-CREATE TABLE `product` (
+CREATE TABLE `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `version` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
-  `name` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
-  `product_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `text` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
